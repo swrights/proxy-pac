@@ -2,20 +2,20 @@
 function FindProxyForURL(url, host) {
  
     // Local proxy ports
-    var proxy_lsstpup = "SOCKS 127.0.0.1:5700";
-    var proxy_cerb4 = "SOCKS 127.0.0.1:5701";
+    var proxy_5700 = "SOCKS 127.0.0.1:5700";
+    var proxy_5701 = "SOCKS 127.0.0.1:5701";
+    var proxy_5702 = "SOCKS 127.0.0.1:5702";
 
     // Matching rules
     if ( host == "vsphere.ncsa.illinois.edu" )
-        return proxy_cerb4
+        return proxy_5701;
 
     if ( host == "lsst-git.ncsa.illinois.edu" || host == "141.142.181.4" )
-        return proxy_lsstpup
+        return proxy_5700;
 
-    // Example
-//    if (shExpMatch(url, "http://abcdomain.com/folder/*"))
-//        return cerberus_bastion_proxy;
- 
+    if ( isInNet(dnsResolve(host), "192.168.28.0", "255.255.254.0") )
+        return proxy_5702;
+
     // No match
     return "DIRECT";
 }
