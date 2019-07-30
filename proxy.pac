@@ -12,6 +12,9 @@ function FindProxyForURL(url, host) {
 
     if ( host == "vsphere.ncsa.illinois.edu" )
         return proxy_5701;
+ 
+    if ( isInNet(dnsResolve(host), "140.252.32.0", "255.255.254.0") )
+        return proxy_5701;
 
     if ( isInNet(dnsResolve(host), "192.168.28.0", "255.255.254.0") )
         return proxy_5702;
