@@ -13,6 +13,10 @@ function FindProxyForURL(url, host) {
     if ( host == "vsphere.ncsa.illinois.edu" )
         return proxy_5701;
  
+    // LSSTCORP addrs should go direct
+    if ( shExpMatch(, url, "*.lsstcorp.org/*") )
+        return "DIRECT";
+    // LSSTCORP IPs should use proxy
     if ( isInNet(dnsResolve(host), "140.252.32.0", "255.255.254.0") )
         return proxy_5701;
 
