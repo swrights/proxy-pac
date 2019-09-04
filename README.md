@@ -6,7 +6,7 @@ Proxy Helpers and Setup
 1. Open Windows "Proxy Settings"
    1. Windows key → then type "proxy settings"
 1. Use setup script: "On"
-1. Script address: https://ncsa.github.io/lsst-adm-proxy/proxy.pac
+1. Script address: https://raw.githubusercontent.com/andylytical/proxy-pac/master/proxy.pac
 1. Save
 
 
