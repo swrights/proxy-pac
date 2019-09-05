@@ -1,6 +1,9 @@
 // See also: http://findproxyforurl.com/example-pac-file/
 function FindProxyForURL(url, host) {
  
+    //return url;  //useful for troubleshooting
+    //return host; //useful for troubleshooting
+
     // Local proxy ports
     var proxy_5700 = "SOCKS 127.0.0.1:5700";
     var proxy_5701 = "SOCKS 127.0.0.1:5701";
@@ -14,7 +17,7 @@ function FindProxyForURL(url, host) {
         return proxy_5701;
  
     // LSSTCORP addrs should go direct
-    if ( shExpMatch( url, "\.lsstcorp\.org/") )
+    if ( shExpMatch( host, "*.lsstcorp.org") )
         return "DIRECT";
     // LSSTCORP IPs should use proxy
     if ( isInNet(dnsResolve(host), "140.252.32.0", "255.255.254.0") )
