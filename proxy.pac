@@ -17,7 +17,7 @@ function FindProxyForURL(url, host) {
         return proxy_5701;
  
     // LSSTCORP addrs should go direct
-    if ( shExpMatch( host, "*.lsstcorp.org") )
+    if ( shExpMatch( host, "ls.st|*.lsstcorp.org") )
         return "DIRECT";
     // LSSTCORP IPs should use proxy
     if ( isInNet(dnsResolve(host), "140.252.32.0", "255.255.254.0") )
