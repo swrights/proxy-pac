@@ -14,7 +14,7 @@ function FindProxyForURL(url, host) {
     var proxy_5703 = "SOCKS 127.0.0.1:5703";
 
     // Matching rules
-    if ( shExpMatch( host, "*.git.ncsa.illinois.edu") )
+    if ( shExpMatch( host, "*git.ncsa.illinois.edu") )
         return proxy_5700;
 
     if ( host == "vsphere.ncsa.illinois.edu" )
