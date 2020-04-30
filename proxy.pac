@@ -14,7 +14,7 @@ function FindProxyForURL(url, host) {
     var proxy_5703 = "SOCKS 127.0.0.1:5703";
 
     // Matching rules
-    if ( shExpMatch( host, "*git.ncsa.illinois.edu") )
+    if ( host == "lsst-git.ncsa.illinois.edu" )
         return proxy_5700;
 
     if ( host == "vsphere.ncsa.illinois.edu" )
@@ -30,7 +30,9 @@ function FindProxyForURL(url, host) {
     if ( isInNet(dnsResolve(host), "192.168.28.0", "255.255.254.0") )
         return proxy_5702;
 
-    if ( host == "netdot.ncsa.illinois.edu" )
+    if ( host == "netdot.ncsa.illinois.edu" ||
+         host == "git.ncsa.illinois.edu"
+       )
         return proxy_5703;
 
     // No match
