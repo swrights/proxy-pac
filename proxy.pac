@@ -30,6 +30,10 @@ function FindProxyForURL(url, host) {
     if ( isInNet(dnsResolve(host), "192.168.28.0", "255.255.254.0") )
         return proxy_5702;
 
+    // Anything below here isn't needed when accessed from work
+    if (isInNet(myIpAddress(), "141.142.0.0", "255.255.0.0"))
+        return "DIRECT";
+
     if ( host == "netdot.ncsa.illinois.edu" ||
          host == "git.ncsa.illinois.edu"
        )
