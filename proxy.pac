@@ -1,4 +1,6 @@
-// See also: http://findproxyforurl.com/example-pac-file/
+// See also:
+// Info:    http://findproxyforurl.com/example-pac-file/
+// Testing: https://app.thorsen.pm/proxyforurl
 function FindProxyForURL(url, host) {
  
     // SAMPLES
