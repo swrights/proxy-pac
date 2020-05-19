@@ -34,10 +34,13 @@ function FindProxyForURL(url, host) {
     if (isInNet(myIpAddress(), "141.142.0.0", "255.255.0.0"))
         return "DIRECT";
 
-    if ( host == "netdot.ncsa.illinois.edu" ||
-         host == "git.ncsa.illinois.edu"
-       )
+    var hosts = [ "netdot.ncsa.illinois.edu",
+                  "git.ncsa.illinois.edu",
+                  "netact.ncsa.illinois.edu" ];
+    if ( hosts.includes( host ) )
         return proxy_5703;
+    //if ( shExpMatch( host, "(netdot|git|netact).ncsa.illinois.edu" ) )
+    //    return proxy_5703;
 
     // No match
     return "DIRECT";
