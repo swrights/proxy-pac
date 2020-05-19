@@ -17,9 +17,16 @@ Proxy Helpers and Setup
 See also: https://gist.github.com/dusenberrymw/850151bda3253453e5244d6a33c7cd2d
 
 # Testing
+### Online
+* https://app.thorsen.pm/proxyforurl
+
+### Local
 1. Install `libpacparser1`
    1. `sudo apt install libpacparser1` #ubuntu
 1. `/usr/bin/pactester -p <PAC_FILE> -u <URL>`
 References:
 * https://github.com/pacparser/pacparser
 * https://success.thousandeyes.com/PublicArticlePage?articleIdParam=kA044000000LBBmCAO
+
+# References
+* http://findproxyforurl.com/example-pac-file/
