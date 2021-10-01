@@ -16,23 +16,12 @@ function FindProxyForURL(url, host) {
   var proxy_5703 = "SOCKS 127.0.0.1:5703";
 
   // Matching rules
-  if ( host == "lsst-git.ncsa.illinois.edu"
-  || isInNet(dnsResolve(host), "172.31.68.0", "255.255.252.0")
-  )
-    return proxy_5700;
 
   var cerb_tunnel_hosts = [
     "netdot.ncsa.illinois.edu",
     "vsphere.ncsa.illinois.edu",
   ];
   if ( cerb_tunnel_hosts.includes( host ) )
-    return proxy_5701;
-
-  // LSSTCORP addrs should go direct
-  if ( shExpMatch( host, "ls.st|*.lsstcorp.org") )
-    return "DIRECT";
-  // LSSTCORP IPs should use proxy
-  if ( isInNet(dnsResolve(host), "140.252.32.0", "255.255.254.0") )
     return proxy_5701;
 
   if ( isInNet(dnsResolve(host), "192.168.28.0", "255.255.254.0") )
