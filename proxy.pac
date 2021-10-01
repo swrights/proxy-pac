@@ -10,10 +10,10 @@ function FindProxyForURL(url, host) {
   //if ( shExpMatch( url, "*192.168*") )
 
   // Local proxy ports
-  var proxy_5700 = "SOCKS 127.0.0.1:5700";
-  var proxy_5701 = "SOCKS 127.0.0.1:5701";
-  var proxy_5702 = "SOCKS 127.0.0.1:5702";
-  var proxy_5703 = "SOCKS 127.0.0.1:5703";
+  var proxy_5700 = "SOCKS5 127.0.0.1:5700";
+  var proxy_5701 = "SOCKS5 127.0.0.1:5701";
+  var proxy_5702 = "SOCKS5 127.0.0.1:5702";
+  var proxy_5703 = "SOCKS5 127.0.0.1:5703";
 
   // Matching rules
 
