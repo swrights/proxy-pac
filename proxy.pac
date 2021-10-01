@@ -15,8 +15,16 @@ function FindProxyForURL(url, host) {
   var proxy_5702 = "SOCKS5 127.0.0.1:5702";
   var proxy_5703 = "SOCKS5 127.0.0.1:5703";
 
-  // Matching rules
+  // ACHE (5700)
+  var ache_tunnel_hosts = [
+    "ache-vcenter.internal.ncsa.edu",
+    "ache-git.ncsa.illinois.edu",
+  ];
+  if ( ache_tunnel_hosts.includes( host ) )
+    return proxy_5700;
 
+
+  // CERBERUS (5701)
   var cerb_tunnel_hosts = [
     "netdot.ncsa.illinois.edu",
     "vsphere.ncsa.illinois.edu",
@@ -24,6 +32,7 @@ function FindProxyForURL(url, host) {
   if ( cerb_tunnel_hosts.includes( host ) )
     return proxy_5701;
 
+  // VMs (5702)
   if ( isInNet(dnsResolve(host), "192.168.28.0", "255.255.254.0") )
     return proxy_5702;
 
@@ -31,6 +40,7 @@ function FindProxyForURL(url, host) {
   if (isInNet(myIpAddress(), "141.142.0.0", "255.255.0.0"))
     return "DIRECT";
 
+  // NCSA (5703)
   var ncsa_tunnel_hosts = [
     "git.ncsa.illinois.edu",
     "netact.ncsa.illinois.edu",
