@@ -42,7 +42,6 @@ function FindProxyForURL(url, host) {
 
   // NCSA (5703)
   var ncsa_tunnel_hosts = [
-    "git.ncsa.illinois.edu",
     "netact.ncsa.illinois.edu",
     "odcim.ncsa.illinois.edu",
   ];
