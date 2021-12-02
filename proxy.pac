@@ -14,6 +14,7 @@ function FindProxyForURL(url, host) {
   var proxy_5701 = "SOCKS5 127.0.0.1:5701";
   var proxy_5702 = "SOCKS5 127.0.0.1:5702";
   var proxy_5703 = "SOCKS5 127.0.0.1:5703";
+  var proxy_5705 = "SOCKS5 127.0.0.1:5705";
 
   // ACHE (5700)
   var ache_tunnel_hosts = [
@@ -35,6 +36,10 @@ function FindProxyForURL(url, host) {
   // VMs (5702)
   if ( isInNet(dnsResolve(host), "192.168.28.0", "255.255.254.0") )
     return proxy_5702;
+
+  // LSST BMC (5705)
+  if ( isInNet(dnsResolve(host), "192.168.181.0", "255.255.254.0") )
+    return proxy_5705;
 
   // Anything below here isn't needed when accessed from work
   if (isInNet(myIpAddress(), "141.142.0.0", "255.255.0.0"))
