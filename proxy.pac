@@ -38,7 +38,7 @@ function FindProxyForURL(url, host) {
     return proxy_5702;
 
   // LSST BMC (5705)
-  if ( isInNet(dnsResolve(host), "192.168.181.0", "255.255.254.0") )
+  if ( isInNet(dnsResolve(host), "192.168.180.0", "255.255.252.0") )
     return proxy_5705;
 
   // Anything below here isn't needed when accessed from work
